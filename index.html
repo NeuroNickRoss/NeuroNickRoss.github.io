@@ -3,76 +3,210 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Nick Ross</title>
-  <meta name="description" content="Nick Ross: research, publications, and projects.">
+  <title>Nick Ross | Biophotonics and Near-Infrared Spectroscopy</title>
+  <meta name="description" content="Nick Ross is a Bioengineering PhD candidate at the University of Notre Dame building frequency-domain near-infrared spectroscopy to detect brain bleeds.">
+  <meta property="og:title" content="Nick Ross">
+  <meta property="og:description" content="Frequency-domain near-infrared spectroscopy, hematoma detection, tissue phantoms, and brain-computer interfaces.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://neuronickross.github.io/">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23142235'/%3E%3Cpath d='M7 9 Q16 34 25 9' fill='none' stroke='%23e0564c' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Space+Grotesk:wght@500;700&display=swap">
   <link rel="stylesheet" href="style.css">
+  <script>
+    try { var t = localStorage.getItem("theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
 </head>
 <body>
+  <a class="skip" href="#research">Skip to content</a>
+
   <header class="site-header">
-    <a class="brand" href="#top">Nick Ross</a>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#publications">Publications</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-      <button id="theme" aria-label="Toggle dark mode">&#9680;</button>
-    </nav>
+    <div class="inner">
+      <a class="brand" href="#top">Nick Ross</a>
+      <nav aria-label="Sections">
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#projects">Projects</a>
+        <a href="#news">News</a>
+        <a href="#contact">Contact</a>
+        <button id="theme" type="button" aria-label="Switch between light and dark mode">&#9680;</button>
+      </nav>
+    </div>
   </header>
 
   <main id="top">
-    <section class="hero">
-      <h1>Nick Ross</h1>
-      <p class="tagline">TODO: one-line description, e.g. "PhD student at the University of Notre Dame working on near-infrared spectroscopy and diffuse optics."</p>
-      <p class="links">
-        <a href="https://github.com/NeuroNickRoss">GitHub</a>
-        <a href="mailto:nross3@nd.edu">Email</a>
-        <a href="#">LinkedIn</a>
-        <a href="#">Google Scholar</a>
-        <a href="#">CV (PDF)</a>
-      </p>
+    <section class="hero inner">
+      <div class="hero-text">
+        <div class="who">
+          <!-- TODO(headshot): replace the monogram span with <img src="headshot.jpg" alt="Nick Ross" class="avatar"> -->
+          <span class="avatar monogram" aria-hidden="true">NR</span>
+          <p class="eyebrow">Bioengineering PhD candidate<br>University of Notre Dame</p>
+        </div>
+        <h1>Light that finds bleeds under the skull.</h1>
+        <p class="lede">I build frequency-domain near-infrared spectroscopy (FD-NIRS) to detect intracranial hematomas at the bedside, in the <a href="https://osullivangroup.nd.edu">O'Sullivan Biophotonics Lab</a>. Next, I want to build brain-computer interfaces.</p>
+        <p class="links">
+          <a href="mailto:nross3@nd.edu">Email</a>
+          <a href="https://github.com/NeuroNickRoss">GitHub</a>
+          <a href="https://www.linkedin.com/in/nicholasross08">LinkedIn</a>
+          <!-- TODO(scholar): add Google Scholar URL -->
+          <a href="#" class="todo" data-todo="Google Scholar link">Google Scholar</a>
+          <!-- TODO(cv): add cv.pdf to the repo root -->
+          <a href="cv.pdf" class="todo" data-todo="CV PDF">CV (PDF)</a>
+        </p>
+      </div>
+      <figure class="hero-fig">
+        <div class="canvas-box">
+          <canvas id="banana" role="img" aria-label="Simulated photon paths travelling through tissue from a light source to a detector 30 millimetres away, forming the banana-shaped sensitivity region"></canvas>
+        </div>
+        <figcaption>Monte Carlo photon paths that reached the detector. Their envelope is the "banana" that sets how deep NIRS can see.</figcaption>
+      </figure>
     </section>
 
-    <section id="about">
-      <h2>About</h2>
-      <p>TODO: two or three short paragraphs. What you work on, what you are good at, and what you are looking for next.</p>
-    </section>
-
-    <section id="publications">
-      <h2>Publications</h2>
-      <ul class="pubs">
-        <li>
-          <span class="title">TODO: Paper title</span>
-          <span class="authors"><strong>N. Ross</strong>, Co-author A, Co-author B</span>
-          <span class="venue">Journal or Conference, 2026</span>
-          <span class="pub-links"><a href="#">PDF</a> <a href="#">DOI</a> <a href="#">Code</a></span>
-        </li>
-      </ul>
-    </section>
-
-    <section id="projects">
-      <h2>Projects</h2>
-      <div class="cards">
-        <article class="card">
-          <h3>Diffusion-approximation LUT for layered tissue</h3>
-          <p>Look-up-table approach to recovering optical properties in multilayer media with the diffusion approximation. TODO: refine description, add link and image.</p>
-          <p class="tags">Python Â· NumPy Â· Optics</p>
+    <section id="research" class="inner">
+      <h2>Research</h2>
+      <div class="about">
+        <p>My PhD is about a simple clinical question: can light tell you, quickly and without a CT scanner, whether someone has bleeding between the skull and the brain? I design the hardware, the light-transport models, and the tissue phantoms needed to answer it.</p>
+        <p>Before engineering I worked in marketing and sales, which is why I care as much about explaining the work as doing it. In summer 2024 I joined the Feinstein Institutes as a Precision Medicine Research Fellow, analyzing Utah-array recordings during vagus nerve stimulation. That experience is pulling me toward neural interfaces after I defend in 2027.</p>
+      </div>
+      <div class="themes">
+        <article>
+          <h3>Hematoma detection with diffuse optics</h3>
+          <p>A brush-optode FD-NIRS probe built around a vector network analyzer and silicon photomultipliers, with multilayer diffusion and Monte Carlo models to recover optical properties when blood sits under scalp and skull.</p>
+          <p class="meta">KiCad mixed-signal PCBs · MATLAB · Python · MCX</p>
         </article>
-        <article class="card">
-          <h3>TODO: Project name</h3>
-          <p>What it does, why it matters, what you built.</p>
-          <p class="tags">Tech Â· Stack Â· Here</p>
-          <a href="#">View on GitHub</a>
+        <article>
+          <h3>Wearable FD-NIRS</h3>
+          <p>Validated a miniature wearable FD-NIRS system against known responses (mental arithmetic, Valsalva, cuff occlusion) and wrote the real-time processing and visualization.</p>
+          <p class="meta">Biomedical Optics Express cover, 2026</p>
+        </article>
+        <article>
+          <h3>Tissue-mimicking phantoms</h3>
+          <p>Layered and hemispherical silicone head phantoms with tuned absorption and scattering, including one with real human hair, to test how deep and how reliably a probe can see.</p>
+          <p class="meta">P-4 silicone · TiO₂ · nigrosin · 3D-printed molds</p>
         </article>
       </div>
     </section>
 
-    <section id="contact">
+    <section id="publications" class="inner">
+      <h2>Publications</h2>
+      <h3 class="sub">Journal articles</h3>
+      <ol class="pubs">
+        <li>
+          <span class="yr">2026</span>
+          <div>
+            <a class="title" href="https://doi.org/10.1088/2515-7647/ae6ae4">Advances in fully integrated wearable near-infrared spectroscopy: hardware innovations and biomedical applications</a>
+            <span class="authors">S. Lahade*, <b>N. A. Ross</b>*, T. D. O'Sullivan</span>
+            <span class="venue">Journal of Physics: Photonics 8, 022004 · *co-first authors</span>
+          </div>
+        </li>
+        <li>
+          <span class="yr">2026</span>
+          <div>
+            <a class="title" href="https://doi.org/10.1364/BOE.585068">Wearable frequency-domain near-infrared spectroscopy (FD-NIRS) system</a>
+            <span class="authors">S. Lahade, S. Yazdi, <b>N. A. Ross</b>, D. Smith, S. Mohammadi, M. M. Green, T. D. O'Sullivan</span>
+            <span class="venue">Biomedical Optics Express 17(2), 555–571 · Editors' Pick, cover article</span>
+          </div>
+        </li>
+        <li>
+          <span class="yr">2025</span>
+          <div>
+            <a class="title" href="https://opg.optica.org/boe/fulltext.cfm?uri=boe-16-4-1582&amp;id=569615">Towards real-time diffuse optical tomography with a handheld scanning probe</a>
+            <span class="authors">R. Dale, <b>N. A. Ross</b>, S. Howard, T. D. O'Sullivan, H. Dehghani</span>
+            <span class="venue">Biomedical Optics Express 16(4), 1582–1601</span>
+          </div>
+        </li>
+        <li>
+          <span class="yr">2024</span>
+          <div>
+            <a class="title" href="https://doi.org/10.1117/1.JBO.29.7.076004">Deep learning-enabled high-speed, multi-parameter diffuse optical tomography</a>
+            <span class="authors">R. Dale, B. Zheng, F. Orihuela-Espina, <b>N. A. Ross</b>, T. D. O'Sullivan, S. Howard, H. Dehghani</span>
+            <span class="venue">Journal of Biomedical Optics 29(7), 076004</span>
+          </div>
+        </li>
+      </ol>
+      <h3 class="sub">Conference papers and talks</h3>
+      <ol class="pubs">
+        <li>
+          <span class="yr">2024</span>
+          <div>
+            <a class="title" href="https://doi.org/10.1117/12.3003850">Demonstration of an entirely handheld real-time frequency-domain near-infrared spectroscopy imaging system</a>
+            <span class="authors">R. A. Stillwell, A. G. Longoria, K. A. Gonzalez, E. W. Sheeder, <b>N. A. Ross</b>, T. D. O'Sullivan</span>
+            <span class="venue">Proc. SPIE PC12827, Multiscale Imaging and Spectroscopy V, PC128270A</span>
+          </div>
+        </li>
+        <li>
+          <span class="yr">2023</span>
+          <div>
+            <span class="title">NearWave Imager: the first entirely handheld real-time frequency-domain near-infrared spectroscopy imaging system</span>
+            <span class="authors">R. A. Stillwell, A. G. Longoria, K. A. Gonzalez, E. W. Sheeder, A. Barreto, <b>N. A. Ross</b>, T. D. O'Sullivan</span>
+            <span class="venue">European Conferences on Biomedical Optics, Munich, paper 12628-35</span>
+          </div>
+        </li>
+        <li>
+          <span class="yr">2023</span>
+          <div>
+            <a class="title" href="https://doi.org/10.1117/12.2650970">Comparison of multi-distance and multi-frequency methods in frequency-domain near-infrared spectroscopy</a>
+            <span class="authors">O. S. Abdalsalam, <b>N. A. Ross</b>, G. A. Perkins, R. Dale, H. Dehghani, T. D. O'Sullivan, S. L. Ferradal</span>
+            <span class="venue">SPIE Photonics West 2023, paper 12376-7</span>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <section id="projects" class="inner">
+      <h2>Projects</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>10× faster optical-property recovery</h3>
+          <p>Replaced an exhaustive residual search over a 6.25-million-entry look-up table with k-nearest-neighbor search, cutting fitting time by a factor of ten.</p>
+          <p class="meta">MATLAB · inverse problems</p>
+        </article>
+        <article class="card">
+          <h3><a href="https://github.com/NeuroNickRoss/NIRSgui">NIRSgui</a></h3>
+          <p>A small Python GUI that fits absorption and reduced scattering from frequency-domain data with the semi-infinite diffusion model. Built as a teaching tool.</p>
+          <p class="meta">Python · diffusion theory</p>
+        </article>
+        <article class="card">
+          <h3><a href="https://github.com/NeuroNickRoss/fNIRS_BCI_wOpenSourceDataset">Real-time fNIRS BCI</a></h3>
+          <p>Refactored an open EEG-fNIRS motor-imagery pipeline into modular code, added real-time predictions, and built a MATLAB neurofeedback interface.</p>
+          <p class="meta">Python · MATLAB · machine learning</p>
+        </article>
+        <article class="card">
+          <h3>VisiLocate</h3>
+          <p>A breast-tumor localization device. Our team won the 2024 McCloskey New Venture Competition grand prize and six more awards, $75,000 in total.</p>
+          <p class="meta">Medical devices · startup</p>
+        </article>
+        <article class="card">
+          <h3>SfNIRS Journal Club</h3>
+          <p>I run a monthly virtual journal club that brings fNIRS researchers from different fields and countries together around one paper.</p>
+          <p class="meta">Community · Society for fNIRS</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="news" class="inner">
+      <h2>News</h2>
+      <ul class="news">
+        <li><time datetime="2026-01">Jan 2026</time><span>Our wearable FD-NIRS paper was an Editors' Pick and the cover of Biomedical Optics Express.</span></li>
+        <li><time datetime="2025-07">Jul 2025</time><span>Passed my PhD candidacy exam on optical detection of traumatic brain injury.</span></li>
+        <li><time datetime="2025-07">Jul 2025</time><span>Attended the fNIRS Summer School at Washington University in St. Louis.</span></li>
+        <li><time datetime="2024-06">Summer 2024</time><span>Precision Medicine Research Fellow at the Feinstein Institutes for Medical Research.</span></li>
+        <li><time datetime="2024-05">May 2024</time><span>VisiLocate won the McCloskey New Venture Competition grand prize.</span></li>
+      </ul>
+    </section>
+
+    <section id="contact" class="inner">
       <h2>Contact</h2>
-      <p>The best way to reach me is <a href="mailto:nross3@nd.edu">nross3@nd.edu</a>.</p>
+      <p class="contact">The best way to reach me is <a href="mailto:nross3@nd.edu">nross3@nd.edu</a>. I'm glad to talk about diffuse optics, NIRS hardware, phantoms, or roles in brain-computer interfaces.</p>
     </section>
   </main>
 
-  <footer>&copy; <span id="year"></span> Nick Ross</footer>
+  <footer class="inner">
+    <span>&copy; <span id="year">2026</span> Nick Ross</span>
+    <span class="mono">λ = 690 / 830 nm</span>
+  </footer>
+  <script src="photons.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
