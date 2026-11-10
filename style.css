@@ -121,3 +121,4 @@ footer { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8p
 .card img { display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: cover; border-radius: 6px; margin-bottom: 14px; }
 .empty { color: var(--muted); border: 1px dashed var(--line); border-radius: 10px; padding: 28px 20px; text-align: center; }
 nav a[aria-current="page"] { color: var(--fg); }
+figcaption .lambda { display: block; margin-top: 4px; color: var(--fg); }
