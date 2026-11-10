@@ -116,7 +116,6 @@ footer { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8p
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 
 /* Research cards and the Projects page */
-#research .sub { margin: 40px 0 14px; }
 .page-intro { padding-block: 64px 8px; }
 .page-intro .lede { max-width: 58ch; }
 .card img { display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: cover; border-radius: 6px; margin-bottom: 14px; }
