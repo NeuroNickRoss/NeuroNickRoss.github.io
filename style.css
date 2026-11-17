@@ -122,3 +122,24 @@ footer { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8p
 .empty { color: var(--muted); border: 1px dashed var(--line); border-radius: 10px; padding: 28px 20px; text-align: center; }
 nav a[aria-current="page"] { color: var(--fg); }
 figcaption .lambda { display: block; margin-top: 4px; color: var(--fg); }
+
+/* Alex page */
+.gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
+.gallery:empty { display: none; }
+.photo { margin: 0; }
+.photo img { display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 8px; }
+.prose { max-width: 68ch; }
+.prose p + p { margin-top: 1em; }
+.prose h3 { margin-top: 2em; }
+.prose .meta { margin: 0 0 12px; }
+.note { margin-top: 28px; font-size: 15px; color: var(--muted); }
+.years { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 8px; }
+.years a { font: 500 13px var(--f-mono); color: var(--blue); text-decoration: none; border: 1px solid var(--line); border-radius: 6px; padding: 6px 11px; }
+.years a:hover { border-color: var(--blue); }
+h3.year { font: 700 13px var(--f-mono); letter-spacing: 0.1em; color: var(--red); margin: 44px 0 0; padding-top: 8px; scroll-margin-top: 72px; }
+.post { padding: 28px 0; border-top: 1px solid var(--line); }
+.post h4 { font: 700 21px/1.25 var(--f-display); letter-spacing: -0.01em; margin: 0; text-wrap: balance; }
+.post .meta { margin: 6px 0 14px; }
+.post p + p { margin-top: 1em; }
+.post-photos { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px; margin-top: 18px; }
+.post-photos img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 6px; }
